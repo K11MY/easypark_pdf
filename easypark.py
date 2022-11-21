@@ -1,7 +1,6 @@
 from PyPDF2 import PdfFileReader
 import os 
 import re
-import glob
 
 def extract_pdf(file_path): 
     # Get receipts
