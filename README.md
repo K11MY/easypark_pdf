@@ -1,6 +1,6 @@
 # Rename Easypark pdf 
 
-Easypark uses random numbers to name their parking receipts e.g Parking_348483. This python script will rename your parking receipt to the date you purchased your receipt and start/end time e.g Parking_20221101_0800_1700.
+Easypark uses random numbers to name their parking receipts e.g Parking_348483. This python script will rename your parking receipt to the date you purchased your parking and start/end time e.g Parking_20221101_0800_1700.
 
 ## Getting started 
 Pre-reqs
