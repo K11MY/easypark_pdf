@@ -5,9 +5,7 @@ import glob
 
 def extract_pdf(file_path): 
     # Get receipts
-    #receipts = os.listdir(file_path)
     receipts = glob.glob(file_path+"*.pdf")
-    print(receipts)
     # Set the regex pattern to read the file 
     pattern = r'[\d]{4}.[\d]{1,2}.[\d]{1,2}'
     # Iterate through the re
@@ -31,6 +29,5 @@ if __name__ == "__main__":
     # File path must have the "/" at the end to read all parking files
     file_path = "Easypark/"
     extract_pdf(file_path)
-
 
 
