@@ -1,16 +1,20 @@
 from PyPDF2 import PdfReader
 import os 
 import re
+import glob
 
 def extract_pdf(file_path): 
     # Get receipts
-    receipts = os.listdir(file_path)
+    #receipts = os.listdir(file_path)
+    receipts = glob.glob(file_path+"*.pdf")
+    print(receipts)
     # Set the regex pattern to read the file 
     pattern = r'[\d]{4}.[\d]{1,2}.[\d]{1,2}'
-    # Iterate through the receipts list
+    # Iterate through the re
+    # ceipts list
     for receipt in receipts:
         # Read the pdf 
-        pdf = PdfReader(file_path + receipt, strict=False)
+        pdf = PdfReader(receipt, strict=False)
         # Read the first page
         page = pdf.pages[0]
         # Extract the text from the pdf
@@ -20,7 +24,8 @@ def extract_pdf(file_path):
         # replace the '.' in the date with no spaces
         date = extract_date[3].replace('.','')
         # rename the file
-        os.rename(file_path + receipt, file_path + 'Parking_'+date+'.pdf')
+        os.rename(receipt, file_path + 'Parking_'+date+'.pdf')
+    
 
 if __name__ == "__main__":
     # File path must have the "/" at the end to read all parking files
