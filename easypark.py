@@ -3,9 +3,9 @@ from glob import glob
 from os import rename
 from re import findall
 
-def extract_pdf(file_path): 
+def extract_pdf(filePath): 
     # Get receipts
-    receipts = glob(file_path+"Parking_*.pdf")
+    receipts = glob(filePath+"Parking_*.pdf")
     # Date pattern
     datePattern = r'\d{4}\.\d{2}\.\d{2}'
     # Time pattern 
@@ -28,12 +28,12 @@ def extract_pdf(file_path):
         startTime = extractTime[0].replace(':','')
         endTime = extractTime[1].replace(':','')
         # Rename the file as Parking_date_startTime_endTime.pdf
-        rename(receipt, file_path + 'Parking_'+date+'_'
+        rename(receipt, filePath + 'Parking_'+date+'_'
                     + startTime + '_' + endTime +'.pdf')
 
 if __name__ == "__main__":
     # File path must have the "/" at the end to read all parking files
-    file_path = "Easypark/"
-    extract_pdf(file_path)
+    filePath = "Easypark/"
+    extract_pdf(filePath)
 
 
