@@ -1,4 +1,4 @@
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 import os 
 import re
 
@@ -10,7 +10,7 @@ def extract_pdf(file_path):
     # Iterate through the receipts list
     for receipt in receipts:
         # Read the pdf 
-        pdf = PdfFileReader(file_path + receipt)
+        pdf = PdfReader(file_path + receipt, strict=False)
         # Read the first page
         page = pdf.pages[0]
         # Extract the text from the pdf
