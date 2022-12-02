@@ -1,8 +1,10 @@
-# Rename Easypark pdf 
+# Rename Easypark PDFs 
+
+## What do?
 
 Easypark uses random numbers to name their parking receipts e.g Parking_348483. This python script will rename your parking receipt to the date you purchased your parking and price (in cents) e.g Parking_20221101_1760.
 
-## Getting started 
+## How do?
 Pre-reqs
 * python3 
 
@@ -16,22 +18,33 @@ cd easypark_pdf
 ```
 Create a python virtual environment 
 ```sh
-python3 -m venv venvName
+python3 -m venv venv
 ```
 Activate the virtual environment
 ```sh
-source ./venvName/bin/activate
+source venv/bin/activate
 ```
 Install requirements
 ```sh
-pip3 install -r requirements.txt
+python3 -m pip install .
 ```
-Now that you have the environment set up download all your easy park receipts and put them into the Easypark directory. 
+
+Now that you have the environment set up download all your easy park receipts and put them into the `easypark` directory. 
+
+## Make work?
 
 Once all parking receipts are in the directory run:
 ```sh
-python3 easypark.py
+easypark-pdf
 ```
+
+Optionally specify the directory
+```sh
+easypark-pdf [--dir/-d] /var/tmp/
+```
+
+## Now what?
+
 After the file has been rename you can deactivate the virtual environment by typing
 ```sh
 deactivate
