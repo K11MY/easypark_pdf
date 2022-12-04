@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "easypark-pdf"
+version = "0.0.1"
+dependencies = [
+    "glob2",
+    "PyPDF2",
+    "black"
+]
+
+[tool.setuptools.packages.find]
+exclude = ["test", "tests.*"]
+
+[project.scripts]
+easypark-pdf = "src.__main__:main"
